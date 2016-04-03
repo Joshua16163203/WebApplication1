@@ -16,16 +16,27 @@ namespace WebApplication1.Controllers
         }
 
         // GET /home/about
+        [ActionName("about-this-atm")]  //Change the URL based on this name
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
-            return View();
+            return View("About");
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            //Similar to a session object
+            ViewBag.TheMessage = "Having Trouble? Send us a message.";
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Contact(string message)
+        {
+            // TODO: send message to HQ
+            ViewBag.TheMessage = "Thanks, we got your message";
 
             return View();
         }
@@ -42,7 +53,9 @@ namespace WebApplication1.Controllers
             {
                 return Content(serial.ToLower());
             }
-            return new HttpStatusCodeResult(404);
+            //return new HttpStatusCodeResult(404);
+            //return Json(new {name = "serial", value = serial}, JsonRequestBehavior.AllowGet);
+            return RedirectToAction("Index");
         }
     }
 }
