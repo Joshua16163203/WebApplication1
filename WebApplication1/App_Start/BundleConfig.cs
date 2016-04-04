@@ -16,6 +16,8 @@ namespace WebApplication1
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
+            //Bundles will be compiled into a single file for further optimisation. This includes minification.
+            //  If a minified version exists, this is the one which will be used
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 

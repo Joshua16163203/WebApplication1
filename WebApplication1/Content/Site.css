@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.image-width-60 {
+    width: 60%;
+}
